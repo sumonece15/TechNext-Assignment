@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="position"
+            type="java.lang.Integer" />
+        <variable
+            name="viewModel"
+            type="com.technextassignment.view_models.MainActivityViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> viewModel.onItemClick(position)}"
+        android:orientation="horizontal"
+        android:background="#DCD9D9"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/image_url"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            app:imageUrl='@{viewModel.getBlogAt(position).cover_photo}'/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginLeft="10dp"
+                android:text="@{viewModel.getBlogAt(position).title}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.getBlogAt(position).description}"
+                android:layout_marginTop="5dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+    
+    </LinearLayout>
+</layout>

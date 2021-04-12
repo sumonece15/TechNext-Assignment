@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TechNext Assignment</string>
+
+    <array name="catArr">
+        <item>Lifestyle</item>
+        <item>Business</item>
+        <item>Communication</item>
+    </array>
+</resources>
